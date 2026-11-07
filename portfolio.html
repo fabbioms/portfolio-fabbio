@@ -81,18 +81,53 @@ let sx=null;addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:
 addEventListener("touchend",e=>{if(sx===null||lb.classList.contains("on"))return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>70)step(dx<0?1:-1);sx=null},{passive:true});
 </script>
 
-<!-- INSIRA AQUI NO FINAL DO ARQUIVO -->
+<!-- SEGURANCA DOS DADOS -->
 <script>
-  document.addEventListener('contextmenu', function(e) {
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('copy', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('cut', function(e) {
     e.preventDefault();
   });
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'F12') e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'i' || e.key === 'j')) e.preventDefault();
-    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) e.preventDefault();
-    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) e.preventDefault();
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'i' || e.key === 'j')) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+      e.preventDefault();
+    }
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) {
+      e.preventDefault();
+    }
   });
+</script>
+
+<script>
+  // 1. Congela a página se tentarem debugar o código
+  setInterval(function() {
+    debugger;
+  }, 100);
+
+  // 2. Apaga o conteúdo da tela se detectada alteração no tamanho da janela (abertura do console lateral)
+  window.addEventListener('resize', function() {
+    if ((window.outerWidth - window.innerWidth) > 100 || (window.outerHeight - window.innerHeight) > 100) {
+      document.body.innerHTML = "Acesso não autorizado ao código fonte.";
+    }
+  });
+
+  // 3. Limpa o console continuamente para atrapalhar a leitura de dados
+  setInterval(function() {
+    console.clear();
+  }, 50);
 </script>
 
 </body>
