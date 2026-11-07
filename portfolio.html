@@ -110,25 +110,5 @@ document.addEventListener('contextmenu', function(e) {
     }
   });
 </script>
-
-<script>
-  // 1. Congela a página se tentarem debugar o código
-  setInterval(function() {
-    debugger;
-  }, 100);
-
-  // 2. Apaga o conteúdo da tela se detectada alteração no tamanho da janela (abertura do console lateral)
-  window.addEventListener('resize', function() {
-    if ((window.outerWidth - window.innerWidth) > 100 || (window.outerHeight - window.innerHeight) > 100) {
-      document.body.innerHTML = "Acesso não autorizado ao código fonte.";
-    }
-  });
-
-  // 3. Limpa o console continuamente para atrapalhar a leitura de dados
-  setInterval(function() {
-    console.clear();
-  }, 50);
-</script>
-
 </body>
 </html>
