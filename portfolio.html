@@ -79,4 +79,21 @@ const step=d=>{const[r,i]=route();let t;if(r==="exp"){const n=i+d;t=n<0?"#indice
 addEventListener("keydown",e=>{if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1);if(e.key==="Escape")lb.classList.remove("on")});
 let sx=null;addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
 addEventListener("touchend",e=>{if(sx===null||lb.classList.contains("on"))return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>70)step(dx<0?1:-1);sx=null},{passive:true});
-</script></body></html>
+</script>
+
+<!-- INSIRA AQUI NO FINAL DO ARQUIVO -->
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12') e.preventDefault();
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'i' || e.key === 'j')) e.preventDefault();
+    if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) e.preventDefault();
+    if (e.ctrlKey && (e.key === 's' || e.key === 'S')) e.preventDefault();
+  });
+</script>
+
+</body>
+</html>
