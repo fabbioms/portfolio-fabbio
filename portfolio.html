@@ -1,4 +1,25 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Portfólio Pedagógico · Maternal II · Fábbio Martins Silveira</title>
+<!DOCTYPE html><html lang="pt-BR"><head>
+<script>
+  (function() {
+    const senhaCorreta = "2026";
+    document.documentElement.style.display = 'none';
+    const senhaDigitada = prompt("Este portfólio é protegido. Digite a senha de acesso:");
+    if (senhaDigitada === senhaCorreta) {
+      document.addEventListener("DOMContentLoaded", function() {
+        document.documentElement.style.display = 'block';
+      });
+      if (document.readyState === "interactive" || document.readyState === "complete") {
+        document.documentElement.style.display = 'block';
+      }
+    } else {
+      alert("Senha incorreta. Acesso negado.");
+      window.location.href = "about:blank";
+    }
+  })();
+</script>
+
+    
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Portfólio Pedagógico · Maternal II · Fábbio Martins Silveira</title>
 <style>
 :root{--bg:#FFF8EC;--card:#fff;--text:#4A5568;--navy:#1E3A5F;--teal:#1F8A8A;--coral:#FF7A6B;--sun:#FFC94A;--mint:#DDF3EE;--pink:#FFE6E1;--sunl:#FFF0C7;--head:#1E3A5F;--chipfg:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#13202D;--card:#1C2E41;--text:#B9C6D3;--head:#F2F6FA;--mint:#1B3A40;--pink:#3A2A30;--sunl:#3A3422;--navy:#2C4B73}}
